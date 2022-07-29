@@ -33,8 +33,8 @@ jobs:
         - name: 'Send mail'
           uses: dawidd6/action-send-mail@master
           with:
-            server_address: mail.gmx.com
-            server_port: 587
+            server_address: smtp.qq.com
+            server_port: 465
             secure: true
             username: ${{ secrets.MAIL_USERNAME }}
             password: ${{ secrets.MAIL_PASSWORD }}
