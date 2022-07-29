@@ -25,8 +25,6 @@ jobs:
           uses: zcong1993/setup-timezone@v1.1.2
           with:
             timezone: 'Asia/Shanghai'
-        - name: 'Get Date'
-          run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
         - name: 'Sign'
           env:
             EMPLID: ${{ secrets.EMPLID }}
@@ -40,7 +38,7 @@ jobs:
             secure: true
             username: ${{ secrets.MAIL_USERNAME }}
             password: ${{ secrets.MAIL_PASSWORD }}
-            subject: (${{env.REPORT_DATE}}) 签到结果
+            subject: 签到结果
             body: file://oa_sign.log
             to: ${{ secrets.MAIL_TO }}
             from: GitHub Actions
