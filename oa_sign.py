@@ -204,8 +204,8 @@ def signOff(cookie):
 
 
 if(__name__ == '__main__'):
-    # userInfo = ('880000', 'OA_PASSWORD')
-    userInfo = getLoginInfoFromKB()
+    userInfo = (os.environ['EMPLID'], os.environ['PASSWD'])
+    # userInfo = getLoginInfoFromKB()
     logging.info('============================================')
     if (is_workday(datetime.date.today()) and time.localtime().tm_hour < 12):
         logging.info(userInfo[0] + '上班打卡')
